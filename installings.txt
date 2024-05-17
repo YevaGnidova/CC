@@ -1,0 +1,11 @@
+client:  
+  npm create vite@latest client
+  npm i axios
+
+server:
+  npm init --yes
+  npm i express mongoose cors
+
+main:
+  npm init --yes
+  npm i nodemon concurrently react-router-dom react-use-navigate
