@@ -2,8 +2,10 @@ const mongoose = require("mongoose");
 
 const PrisonerSchema = new mongoose.Schema({
     name: String,
-    email: String,
-    age: Number
+    age: Number,
+    image: String,
+    term: Number,
+    reason: String
 });
 
 const Prisoner = mongoose.model("Prisoner", PrisonerSchema);
