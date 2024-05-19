@@ -1,3 +1,5 @@
+import "./PrisonersComponent.css"
+
 function PrisonersComponent() {
     return (
         <>
