@@ -6,4 +6,6 @@ const PrisonerSchema = new mongoose.Schema({
     age: Number
 });
 
-const User = mongoose.model("Prisoner", PrisonerSchema);
+const Prisoner = mongoose.model("Prisoner", PrisonerSchema);
+
+module.exports = Prisoner;
