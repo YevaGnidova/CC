@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "./LoginComponent.css"
 
@@ -16,20 +16,24 @@ function LoginComponent() {
         navigate("/prisoners");
     }
 
+    useEffect(() => {
+        localStorage.setItem("user", JSON.stringify({ user: dir_name, isAuth: false }))
+    })
+
     return (
         <div className="container">
             <form>
-                <h2 className="login">LOGIN</h2>
+                <h2 className="login">LOGOWANIE</h2>
                 <div className="inputblock">
-                    <label>NAME OR EMAIL ACCOUNT:</label>
+                    <label>IMIĘ LUB MAIL KONTO:</label>
                     <input onChange={event => setName(event.target.value)} value={dir_name} />
                 </div>
                 <div className="inputblock">
-                    <label>PASSWORD:</label>
+                    <label>HASŁO:</label>
                     <input onChange={event => setPassword(event.target.value)} value={dir_password} />
                 </div>
                 <div>
-                    <input onClick={passwordVrify} className="signin" type="button" value="SIGN IN" />
+                    <input onClick={passwordVrify} className="signin" type="button" value="ZALOGUJ" />
                 </div>
             </form>
         </div>

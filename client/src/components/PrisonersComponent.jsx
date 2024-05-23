@@ -13,14 +13,12 @@ function PrisonersComponent() {
         if (user) {
             try {
                 user = JSON.parse(user);
-                if (user.isAuth) {
-                    return;
-                }
+                if (user.isAuth) return;
+                else navigate("/"); 
             } catch (err) {
                 console.log(err);
             }
         }
-        navigate("/")
     }, [])
 
     useEffect(() => {
@@ -52,7 +50,7 @@ function PrisonersComponent() {
                 </thead>
                 <tbody>
                     {prisoners.map(prisoner => (
-                        <tr key={prisoner._id}>
+                        <tr className="prisonerdata" key={prisoner._id}>
                             <td>{prisoner.firstName}</td>
                             <td>{prisoner.lastName}</td>
                             <td>{prisoner.pesel}</td>

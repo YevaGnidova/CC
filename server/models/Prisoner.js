@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
 const PrisonerSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
-    image: String,
-    term: Number,
+    firstname: String,
+    lastname: String,
+    pesel: Number,
     reason: String
 });
 
