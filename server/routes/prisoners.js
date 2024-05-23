@@ -2,13 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Prisoner = require("../models/Prisoner");
 
-router.get("/", async (req, res) => {
-    try {
-        const users = await Prisoner.find({});
-        res.json(users)
-    } catch (err) {
-        res.status(500).json({message: err.message})
-    }
+router.get("/", (req, res) => {
+    Prisoner.find({}).then((users)=> {res.json(users)}).catch((err) => res.status(500).json({message: err.message}))
 });
 
 router.post("/", async (req, res) => {

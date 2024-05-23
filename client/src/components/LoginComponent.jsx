@@ -12,6 +12,7 @@ function LoginComponent() {
     function passwordVrify(event) {
         if (dir_name != "director" || dir_password != "code999") return;
         active = true;
+        localStorage.setItem("user", JSON.stringify({ user: dir_name, isAuth: true }))
         navigate("/prisoners");
     }
 
@@ -21,11 +22,11 @@ function LoginComponent() {
                 <h2 className="login">LOGIN</h2>
                 <div className="inputblock">
                     <label>NAME OR EMAIL ACCOUNT:</label>
-                    <input onChange={event => setName(event.target.value)} value={dir_name}/>
+                    <input onChange={event => setName(event.target.value)} value={dir_name} />
                 </div>
-                <div className="inputblock">    
+                <div className="inputblock">
                     <label>PASSWORD:</label>
-                    <input onChange={event => setPassword(event.target.value)} value={dir_password}/>
+                    <input onChange={event => setPassword(event.target.value)} value={dir_password} />
                 </div>
                 <div>
                     <input onClick={passwordVrify} className="signin" type="button" value="SIGN IN" />

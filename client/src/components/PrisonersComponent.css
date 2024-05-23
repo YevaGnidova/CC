@@ -1,0 +1,35 @@
+.prisoners-container {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.prisoners-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: white; 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+
+.prisoners-table th,
+.prisoners-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.prisoners-table th {
+  background-color: rgba(0, 0, 0, 0.7); 
+  font-weight: bold;
+}
+
+.prisoners-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.prisoners-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2); 
+}
