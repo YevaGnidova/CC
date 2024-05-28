@@ -9,9 +9,13 @@ function PrisonerComponent({ chosen_prisoner, onExit }) {
   });
 
   return (
-    <>
+    <div className="divv">
       <h1>{chosen_prisoner.firstName}</h1>
-    </>
+      <h1>{chosen_prisoner.lastName}</h1>
+      <h1>{chosen_prisoner.pesel}</h1>
+      <h1>{chosen_prisoner.reason}</h1>
+      <h1>{chosen_prisoner.explanation}</h1>
+    </div>
   );
 }
 

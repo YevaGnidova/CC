@@ -22,19 +22,19 @@ function PrisonersComponent(props) {
   function returnList(prisoner, prisonerID) {
     if (prisonerID === chosenID) return (<tr key={prisoner._id}>
       <td>
-        <input className={""} onChange={e => setName(e.target.value)} placeholder="imię"/>
+        <input onChange={e => setName(e.target.value)} placeholder="imię"/>
       </td>
       <td>
-        <input className={""} onChange={e => setSurname(e.target.value)} placeholder="nazwisko"/>
+        <input onChange={e => setSurname(e.target.value)} placeholder="nazwisko"/>
       </td>
       <td>
-        <input className={""} onChange={e => setPesel(e.target.value)} placeholder="pesel"/>
+        <input onChange={e => setPesel(e.target.value)} placeholder="pesel"/>
       </td>
       <td>
-        <input className={""} onChange={e => setReason(e.target.value)} placeholder="przyczyna"/><br/>
-        <textarea className={""} onChange={e => setExplanation(e.target.value)} placeholder="wyjaśnienie"/>
+        <input onChange={e => setReason(e.target.value)} placeholder="przyczyna"/><br/>
+        <textarea onChange={e => setExplanation(e.target.value)} placeholder="wyjaśnienie"/>
       </td>
-      <td className={""}>
+      <td>
         <img onClick={() => updatePrisoner(prisoner._id)} src={done} className="update-img"/><br />
         <img onClick={() => setChosenID("")} src={cancel} className="update-img"/>
       </td>
@@ -102,7 +102,7 @@ function PrisonersComponent(props) {
       await axios.delete(`/api/prisoners/${prisonerID}`);
       props.fetcher();
     } catch (error) {
-      console.log(`There was a problem with deleting the user: ${error.message}`)
+      console.log(`There was a problem with deleting the prisoner: ${error.message}`)
     }
   }
 
@@ -119,11 +119,13 @@ function PrisonersComponent(props) {
       setChosenID("");
       props.fetcher();
     } catch (error) {
-      console.log(`There was a problem with updateing the user: ${error.message}`);
+      console.log(`There was a problem with updateing the prisoner: ${error.message}`);
     }
   }
 
   useEffect(() => {
+    props.fetcher();
+
     let user = localStorage.getItem("user");
     if (user) {
       try {
@@ -166,28 +168,3 @@ function PrisonersComponent(props) {
 }
 
 export default PrisonersComponent;
-
-/*
-[
-{
-  "firstName": "John",
-  "lastName": "Johnish",
-  "pesel": "12345678910",
-  "reason": "laying"
-},
-
-{
-  "firstName": "Martin",
-  "lastName": "Martinish",
-  "pesel": "10987654321",
-  "reason": "killing"
-},
-
-{
-  "firstName": "George",
-  "lastName": "Georgeish",
-  "pesel": "10293847560",
-  "reason": "theft"
-}
-]
-*/
