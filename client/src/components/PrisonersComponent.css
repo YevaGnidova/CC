@@ -37,3 +37,20 @@
 .prisonerdata {
   cursor: pointer;
 }
+
+.update-container {
+  display: none;
+}
+
+.update-img {
+  cursor: pointer;
+  width: 20px;
+}
+
+.hiddeninput {
+  display: none;
+}
+
+.activeinput {
+  display: block;
+}

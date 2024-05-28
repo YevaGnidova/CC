@@ -20,7 +20,30 @@ function AddPrisonersComponent() {
 
     return (
         <>
-            
+            <form>
+                <div>
+                    <label>IMIĘ</label>
+                    <input />
+                </div>
+                <div>
+                    <label>NAZWISKO</label>
+                    <input />
+                </div>
+                <div>
+                    <label>PESEL</label>
+                    <input />
+                </div>
+                <div>
+                    <div>
+                        <label>PRZYCZYNA</label>
+                        <input />
+                    </div>
+                    <div>
+                        <label>WYJAŚNIENIE</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </form>
         </>
     );
 }

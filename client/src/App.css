@@ -18,6 +18,47 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+nav > ul {
+  list-style-type: none;
+}
+
+.li-pris {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.li-pris:hover {
+  color: #afafaf;;
+  text-shadow: 0 0 5px black;;
+}
+
+.container-header > h2 {
+  margin-bottom: 10px
+}
+
+.container-header > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container-header > div > button {
+  width: 120px;
+  background: #5a5a5a;
+  border: 2px solid black;
+  padding: 10px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -31,12 +72,4 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

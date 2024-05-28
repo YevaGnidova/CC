@@ -5,6 +5,7 @@ const PrisonerSchema = new mongoose.Schema({
     lastname: String,
     pesel: Number,
     reason: String,
+    explanation: String,
     is_chosen: Boolean
 });
 
